@@ -58,6 +58,7 @@
     "release": "rollup -c && npm publish --access=public"
   },
   "dependencies": {
+    "@gdcorte/react-core-icons": "^1.0.0",
     "@gdcorte/react-core-theme": "^2.0.0"
   }
 }
