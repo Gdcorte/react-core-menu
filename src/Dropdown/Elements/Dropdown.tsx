@@ -1,15 +1,12 @@
 import { CarretsThin } from "@gdcorte/react-core-icons";
-import { FunctionComponent, HTMLAttributes, useState } from "react";
-import { DropdownBaseProps, DropdownMenu } from "../interface";
+import { useState } from "react";
+import { SubDropdownComponent } from "../interface";
 import { Carret, List, SubContainer, SubMenu, Title } from "../styles";
-import { renderDropdownOptions } from "../utils";
+import { renderDropdownOptions } from "../utils/render";
+import { default as DropdownAction } from "./Action";
+import { default as DropdownLink } from "./Link";
 
-interface ElementContainerProps
-  extends HTMLAttributes<HTMLDivElement>,
-    DropdownMenu,
-    DropdownBaseProps {}
-
-const ElemContainer: FunctionComponent<ElementContainerProps> = ({
+const SubDropdown: SubDropdownComponent = ({
   menuName,
   label,
   options,
@@ -34,6 +31,9 @@ const ElemContainer: FunctionComponent<ElementContainerProps> = ({
   const body = renderDropdownOptions({
     options,
     onOptionClick,
+    SubDropdown,
+    DropdownAction,
+    DropdownLink,
   });
 
   return (
@@ -64,4 +64,4 @@ const ElemContainer: FunctionComponent<ElementContainerProps> = ({
   );
 };
 
-export default ElemContainer;
+export default SubDropdown;

@@ -1,10 +1,7 @@
-import { FunctionComponent } from "react";
-import { DropdownBaseProps, DropdownLink } from "../interface";
+import { DropdownLinkComponent } from "../interface";
 import { Link, Option, SubContainer } from "../styles";
 
-interface LinkOptionProps extends DropdownLink, DropdownBaseProps {}
-
-const ElemOption: FunctionComponent<LinkOptionProps> = ({
+const ElemOption: DropdownLinkComponent = ({
   label,
   href,
   alignment,

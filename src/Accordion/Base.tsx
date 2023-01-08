@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import styled from "styled-components";
+import { AccordionContent, AccordionRaw, SubAccordion } from "./elements";
 import { AccordionOptions } from "./interface";
 import { renderAccordionOptions } from "./utils";
 
@@ -44,6 +45,9 @@ const AccordionMenu: FunctionComponent<AccordionMenuProps> = ({
       openMenu,
       onMenuChange: changeOpenMenu,
       parentLevel: 0,
+      SubAccordion,
+      AccordionContent,
+      AccordionRaw,
     });
   }, [openMenu]);
 

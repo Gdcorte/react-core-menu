@@ -1,5 +1,6 @@
 import { CarretsThin } from "@gdcorte/react-core-icons";
 import { FunctionComponent, useState } from "react";
+import { DropdownAction, DropdownLink, SubDropdown } from "./Elements";
 import { DropdownProps } from "./interface";
 import { Carret, Container, List, Menu, Title } from "./styles";
 import { renderDropdownOptions } from "./utils";
@@ -32,6 +33,9 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   const dropdownOptions = renderDropdownOptions({
     options,
     onOptionClick: setClosed,
+    SubDropdown,
+    DropdownAction,
+    DropdownLink,
   });
 
   return (

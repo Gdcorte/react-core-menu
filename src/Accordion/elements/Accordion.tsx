@@ -1,14 +1,12 @@
 import { CarretDownThin } from "@gdcorte/react-core-icons";
-import { FunctionComponent, useMemo, useState } from "react";
-import { AccordionMenuControlProps, SubAccordionProps } from "../interface";
+import { useMemo, useState } from "react";
+import { SubAccordionComponent } from "../interface";
 import { Carret, Container, List, Menu, Title } from "../styles";
 import { renderAccordionOptions } from "../utils";
+import { default as AccordionContent } from "./Item";
+import { default as AccordionRaw } from "./Raw";
 
-export interface AccordionProps
-  extends SubAccordionProps,
-    AccordionMenuControlProps {}
-
-const Accordion: FunctionComponent<AccordionProps> = ({
+const SubAccordion: SubAccordionComponent = ({
   menuName,
   content,
   action,
@@ -41,6 +39,9 @@ const Accordion: FunctionComponent<AccordionProps> = ({
       openMenu: openSubMenu,
       onMenuChange: changeOpenSubMenu,
       parentLevel: currentLevel,
+      SubAccordion,
+      AccordionContent,
+      AccordionRaw,
     });
   }, [openSubMenu]);
 
@@ -66,4 +67,4 @@ const Accordion: FunctionComponent<AccordionProps> = ({
   );
 };
 
-export default Accordion;
+export default SubAccordion;

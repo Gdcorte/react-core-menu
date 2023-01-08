@@ -1,13 +1,8 @@
-import { FunctionComponent, SyntheticEvent } from "react";
-import { AccordionBaseProps } from "../interface";
+import { SyntheticEvent } from "react";
+import { AccordionRawComponent } from "../interface";
 import { Item } from "../styles";
 
-interface AccordionRawProps extends AccordionBaseProps {
-  parentLevel: number;
-  menuName: string;
-}
-
-const Raw: FunctionComponent<AccordionRawProps> = ({
+const Raw: AccordionRawComponent = ({
   title,
   action,
   menuName,

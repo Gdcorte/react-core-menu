@@ -1,35 +1,9 @@
-import { FunctionComponent } from "react";
-import styles, { css } from "styled-components";
-import { AccordionItemProps, AccordionMenuControlProps } from "../interface";
+import { AccordionItemComponent } from "../interface";
 import { Container, List, Menu, Spacer, Title } from "../styles";
 import { getAccordionMenuName } from "../utils";
 import { default as AccordionRaw } from "./Raw";
 
-interface AccordionContentProps
-  extends AccordionItemProps,
-    AccordionMenuControlProps {}
-
-const StyledItemHover = css`
-  :hover {
-    background-color: ${({ theme: { background } }) => background.shade1};
-    color: ${({ theme: { colors } }) => colors.primary.base};
-
-    svg {
-      fill: ${({ theme: { colors } }) => colors.primary.base};
-    }
-  }
-`;
-
-const StyledItems = styles.div`
-
-    padding: 8px;
-    border-radius: 5px;
-    "cursor: pointer;"
-
-    ${StyledItemHover}
-`;
-
-const AccordionContent: FunctionComponent<AccordionContentProps> = ({
+const AccordionContent: AccordionItemComponent = ({
   description,
   title,
   action,

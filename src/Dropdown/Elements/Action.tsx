@@ -1,10 +1,8 @@
-import { FunctionComponent, SyntheticEvent } from "react";
-import { DropdownAction, DropdownBaseProps } from "../interface";
+import { SyntheticEvent } from "react";
+import { DropdownActionComponent } from "../interface";
 import { Option, SubContainer } from "../styles";
 
-interface DropdownActionProps extends DropdownAction, DropdownBaseProps {}
-
-const ElemOption: FunctionComponent<DropdownActionProps> = ({
+const ElemOption: DropdownActionComponent = ({
   label,
   dataName,
   alignment,
