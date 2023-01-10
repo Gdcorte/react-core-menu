@@ -34,11 +34,11 @@ const ThemeSwitcher: FunctionComponent<ThemeSwitcherProps> = ({
   const { typeName } = useTheme();
 
   function changeType() {
-    let newType = typeName == "Light" ? "Dark" : "Light";
+    let newType = typeName == "light" ? "dark" : "light";
 
     typeChangeCallback(newType);
   }
-  const TypeIcon = typeName == "Light" ? HouseBulbsLight : HouseBulbsDark;
+  const TypeIcon = typeName == "light" ? HouseBulbsLight : HouseBulbsDark;
 
   return (
     <StyledContainer
