@@ -1,10 +1,4 @@
-import {
-  FunctionComponent,
-  HTMLAttributes,
-  ReactNode,
-  useMemo,
-  useState,
-} from "react";
+import { FunctionComponent, HTMLAttributes, useMemo, useState } from "react";
 import styled from "styled-components";
 import { AccordionContent, AccordionRaw, SubAccordion } from "./elements";
 import { AccordionOptions } from "./interface";
@@ -13,7 +7,6 @@ import { renderAccordionOptions } from "./utils";
 export interface AccordionMenuProps extends HTMLAttributes<HTMLDivElement> {
   accordionOptions: AccordionOptions;
   className?: string;
-  children: ReactNode;
 }
 
 const StyledMenuContainer = styled.div`
