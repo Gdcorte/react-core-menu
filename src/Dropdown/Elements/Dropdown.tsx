@@ -12,6 +12,7 @@ const SubDropdown: SubDropdownComponent = ({
   options,
   onOptionClick,
   listOrientation,
+  alignment,
 }) => {
   const [isOpen, setisOpen] = useState(false);
   const listDirection = listOrientation || "Down";
@@ -46,6 +47,7 @@ const SubDropdown: SubDropdownComponent = ({
         onClick={toggleOpen}
         selected={isOpen}
         className={`dropdown-submenu ${menuName}`}
+        alignment={alignment}
       >
         <Title className={`dropdown-title ${menuName}`}>{label}</Title>
         <Carret className={`dropdown-caret ${menuName}`}>

@@ -53,6 +53,7 @@ export function renderDropdownOptions({
       return (
         <SubDropdown
           key={`dropdown-key-${Math.random().toFixed(10)}`}
+          alignment={option.alignment}
           menuName={option.menuName}
           listOrientation={option.listOrientation}
           label={option.label}

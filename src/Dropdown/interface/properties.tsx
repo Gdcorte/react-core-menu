@@ -35,7 +35,8 @@ export type DropdownMenu = {
   menuName: string;
   options: DropdownOption[];
   listOrientation?: DropdownListOrientation;
-} & DropdownBase;
+} & DropdownBase &
+  DropdownOptionBase;
 
 export type SubDropdown = DropdownMenu;
 

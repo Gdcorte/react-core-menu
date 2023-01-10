@@ -36,6 +36,7 @@ Dropdown.args = {
       label: "Sub Menu: RIGHT",
       menuName: "sub-menu-1",
       listOrientation: "Right",
+      alignment: "right",
       options: [
         {
           label: "Sub Menu: UP",

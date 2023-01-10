@@ -12,6 +12,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   label,
   options,
   listOrientation,
+  alignment,
   ...props
 }) => {
   const [isOpen, setisOpen] = useState(false);
@@ -49,6 +50,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
         onClick={toggleOpen}
         selected={currentPageMenu ? currentPageMenu == menuName : false}
         className={`dropdown-menu ${menuName}`}
+        alignment={alignment}
       >
         <Title className={`dropdown-title`}>{label}</Title>
         <Carret className={`dropdown-caret ${menuName}`}>

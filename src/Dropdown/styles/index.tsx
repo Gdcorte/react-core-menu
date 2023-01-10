@@ -64,8 +64,11 @@ export const MenuCss = css<{
 
 export const Menu = styled.div<{
   selected?: boolean;
+  alignment?: string;
 }>`
   ${MenuCss}
+
+  justify-content: ${({ alignment }) => alignment};
 
   :hover {
     background-color: transparent;
@@ -74,8 +77,11 @@ export const Menu = styled.div<{
 
 export const SubMenu = styled.div<{
   selected?: boolean;
+  alignment?: string;
 }>`
   ${MenuCss}
+
+  justify-content: ${({ alignment }) => alignment};
 `;
 
 export const Title = styled.div``;
