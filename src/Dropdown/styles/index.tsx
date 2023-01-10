@@ -85,6 +85,8 @@ export const Carret = styled.div`
   width: 10px;
   height: 10px;
   margin-left: 6px;
+  fill: ${({ theme: { background, fonts } }) =>
+    findBestContrast(background.base, fonts)};
 `;
 
 const ListDirectionCss = css<{ listDirection: DropdownListOrientation }>`
