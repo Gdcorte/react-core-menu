@@ -13,6 +13,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   options,
   listOrientation,
   alignment,
+  disableHover,
   ...props
 }) => {
   const [isOpen, setisOpen] = useState(false);
@@ -24,11 +25,11 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   }
 
   function setClosed(): void {
-    setisOpen(false);
+    !disableHover && setisOpen(false);
   }
 
   function setOpen() {
-    setisOpen(true);
+    !disableHover && setisOpen(true);
   }
 
   const dropdownOptions = renderDropdownOptions({

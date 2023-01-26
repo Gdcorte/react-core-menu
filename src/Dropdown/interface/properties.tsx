@@ -46,9 +46,13 @@ export type DropdownBaseMenuProps = {
 
 export type DropdownBaseProps = {
   onOptionClick: () => void;
+  disableHover?: boolean;
 };
 
-export type DropdownProps = { className?: string } & DropdownBaseMenuProps &
+export type DropdownProps = {
+  className?: string;
+  disableHover?: boolean;
+} & DropdownBaseMenuProps &
   HTMLAttributes<HTMLDivElement>;
 
 export function isDropdownLink(option: DropdownOption): option is DropdownLink {

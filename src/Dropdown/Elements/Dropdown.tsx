@@ -13,6 +13,7 @@ const SubDropdown: SubDropdownComponent = ({
   onOptionClick,
   listOrientation,
   alignment,
+  disableHover,
 }) => {
   const [isOpen, setisOpen] = useState(false);
   const listDirection = listOrientation || "Down";
@@ -23,11 +24,11 @@ const SubDropdown: SubDropdownComponent = ({
   }
 
   function setClosed(): void {
-    setisOpen(false);
+    !disableHover && setisOpen(false);
   }
 
   function setOpen() {
-    setisOpen(true);
+    !disableHover && setisOpen(true);
   }
   const body = renderDropdownOptions({
     options,
