@@ -23,6 +23,7 @@ const test = (event: SyntheticEvent<HTMLDivElement>, dataName?: string) => {
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Dropdown = Template.bind({});
 Dropdown.args = {
+  disableHover: true,
   label: "Hi!, I'm a down menu",
   options: [
     { label: "option 1: link", href: "/" },

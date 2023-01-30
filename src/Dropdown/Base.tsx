@@ -28,13 +28,17 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
     !disableHover && setisOpen(false);
   }
 
+  function closeOnClick(): void {
+    setisOpen(false);
+  }
+
   function setOpen() {
     !disableHover && setisOpen(true);
   }
 
   const dropdownOptions = renderDropdownOptions({
     options,
-    onOptionClick: setClosed,
+    onOptionClick: closeOnClick,
     SubDropdown,
     DropdownAction,
     DropdownLink,
