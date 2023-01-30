@@ -38,16 +38,19 @@ Dropdown.args = {
       menuName: "sub-menu-1",
       listOrientation: "Right",
       alignment: "right",
+      disableHover: true,
       options: [
         {
           label: "Sub Menu: UP",
           menuName: "sub-menu-2",
           listOrientation: "Up",
+          disableHover: true,
           options: [
             {
               label: "Sub Menu: LEFT",
               menuName: "sub-menu-3",
               listOrientation: "Left",
+              disableHover: true,
               options: [{ label: "option LEFT: link", href: "/" }],
             },
           ],

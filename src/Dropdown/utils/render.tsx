@@ -59,6 +59,7 @@ export function renderDropdownOptions({
           label={option.label}
           options={option.options}
           onOptionClick={onOptionClick}
+          disableHover={option.disableHover}
         />
       );
     }

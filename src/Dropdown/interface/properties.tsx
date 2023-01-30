@@ -35,6 +35,7 @@ export type DropdownMenu = {
   menuName: string;
   options: DropdownOption[];
   listOrientation?: DropdownListOrientation;
+  disableHover?: boolean;
 } & DropdownBase &
   DropdownOptionBase;
 

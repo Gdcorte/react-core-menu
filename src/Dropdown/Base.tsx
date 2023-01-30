@@ -1,5 +1,6 @@
 import { CarretsThin } from "@gdcorte/react-core-icons";
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useRef, useState } from "react";
+import { OutsideClickHandler } from "../hooks";
 import { DropdownAction, DropdownLink, SubDropdown } from "./Elements";
 import { DropdownProps } from "./interface";
 import { Carret, Container, List, Menu, Title } from "./styles";
@@ -19,6 +20,9 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
   const [isOpen, setisOpen] = useState(false);
   const listDirection = listOrientation || "Down";
   const CarretNode = CarretsThin[listDirection];
+  const conatinerRef = useRef(null);
+
+  OutsideClickHandler(conatinerRef, outsideClickHandler);
 
   function toggleOpen() {
     setisOpen(!isOpen);
@@ -30,6 +34,10 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
 
   function closeOnClick(): void {
     setisOpen(false);
+  }
+
+  function outsideClickHandler() {
+    disableHover && closeOnClick();
   }
 
   function setOpen() {
@@ -46,6 +54,7 @@ export const Dropdown: FunctionComponent<DropdownProps> = ({
 
   return (
     <Container
+      ref={conatinerRef}
       onMouseEnter={setOpen}
       onMouseLeave={setClosed}
       className={`root dropdown-container ${className} ${menuName}`}
