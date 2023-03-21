@@ -54,7 +54,7 @@ const ColorSwitcher: FunctionComponent<ColorSwitcherProps> = ({
     });
 
   return (
-    <StyledContainer>
+    <StyledContainer className={`theme-color-picker color-picker-${colorName}`}>
       <Dropdown
         label={<StyledColorBlock color={base} />}
         options={colors}

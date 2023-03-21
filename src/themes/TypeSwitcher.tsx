@@ -7,20 +7,18 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: flex;
 
-  > div {
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  width: 24px;
+  height: 24px;
 
-    > svg {
-      height: inherit;
-      width: inherit;
-    }
-    :hover {
-      background-color: ${({ theme: { background } }) => background.shade4};
-    }
+  :hover {
+    background-color: ${({ theme: { background } }) => background.shade4};
+  }
+
+  .icon-house-bulb-dark {
+    fill: #b7b7b7;
   }
 `;
 
@@ -43,11 +41,9 @@ const ThemeSwitcher: FunctionComponent<ThemeSwitcherProps> = ({
   return (
     <StyledContainer
       onClick={changeType}
-      className={`theme-type-switcher-${typeName}`}
+      className={`theme-type-switcher type-switcher-${typeName}`}
     >
-      <div>
-        <TypeIcon />
-      </div>
+      <TypeIcon />
     </StyledContainer>
   );
 };
