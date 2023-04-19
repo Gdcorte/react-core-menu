@@ -1,8 +1,10 @@
+import { DropdownCustomLink } from "../Elements";
 import {
   DropdownActionComponent,
   DropdownLinkComponent,
   DropdownOption,
   isDropdownAction,
+  isDropdownCustomLink,
   isDropdownLink,
   isSubDropdown,
   SubDropdownComponent,
@@ -32,6 +34,20 @@ export function renderDropdownOptions({
           label={option.label}
           onClick={option.onClick}
           dataName={option.dataName}
+          onOptionClick={onOptionClick}
+        />
+      );
+    }
+
+    if (isDropdownCustomLink(option)) {
+      return (
+        <DropdownCustomLink
+          alignment={option.alignment}
+          key={`dropdown-key-${Math.random().toFixed(10)}`}
+          label={option.label}
+          href={option.href}
+          Link={option.customLink}
+          linkProps={option.linkProps}
           onOptionClick={onOptionClick}
         />
       );

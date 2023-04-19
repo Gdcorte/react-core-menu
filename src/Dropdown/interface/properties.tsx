@@ -1,4 +1,9 @@
-import { HTMLAttributes, ReactNode, SyntheticEvent } from "react";
+import {
+  FunctionComponent,
+  HTMLAttributes,
+  ReactNode,
+  SyntheticEvent,
+} from "react";
 
 export type DropdownBase = {
   label: ReactNode;
@@ -27,7 +32,16 @@ export interface DropdownLink extends DropdownBase, DropdownOptionBase {
   href: string;
 }
 
-export type DropdownOption = DropdownAction | DropdownLink | DropdownMenu;
+export interface DropdownCustomLink extends DropdownLink {
+  customLink: FunctionComponent;
+  linkProps: any;
+}
+
+export type DropdownOption =
+  | DropdownAction
+  | DropdownLink
+  | DropdownCustomLink
+  | DropdownMenu;
 
 export type DropdownListOrientation = "Up" | "Down" | "Left" | "Right";
 
@@ -59,6 +73,13 @@ export type DropdownProps = {
 export function isDropdownLink(option: DropdownOption): option is DropdownLink {
   return (option as DropdownLink).href !== undefined;
 }
+
+export function isDropdownCustomLink(
+  option: DropdownOption
+): option is DropdownCustomLink {
+  return (option as DropdownCustomLink).customLink !== undefined;
+}
+
 export function isDropdownAction(
   option: DropdownOption
 ): option is DropdownAction {
